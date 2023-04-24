@@ -5,6 +5,6 @@ export async function handler(event: APIGatewayEvent) {
   return {
     statusCode: 200,
     headers: { "Content-Type": "text/plain" },
-    body: `Good Night, CDK! You've hit ${event.path}\n`,
+    body: `Hello World, CDK! You've hit ${event.path}\n`,
   };
 }
