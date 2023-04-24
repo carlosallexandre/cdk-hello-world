@@ -17,7 +17,7 @@ jobs:
           cdk_subcommand: "deploy"
           cdk_stack: ${{ env.STACK_NAME }}
           cdk_args: "--require-approval never"
-          working_dir: "../../"
+          working_dir: "../../cdk.json"
           actions_comment: false
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
