@@ -8,17 +8,11 @@ env:
   STACK_NAME: "CdkWorkshopStack"
 
 jobs:
-  echo:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: "echo"
-        uses: docker://ubuntu:18.04
-        with:
-          args: ls -l .
+      - uses: actions/checkout@v3
 
-  aws_cdk:
-    runs-on: ubuntu-latest
-    steps:
       - name: cdk deploy
         uses: youyo/aws-cdk-github-actions@v2
         with:
