@@ -26,10 +26,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Install dependencies
-        run: npm install
+        run: yarn
 
       - name: Synth stack
-        run: npm run cdk synth
+        run: yarn cdk synth
 
       - name: Deploy stack
-        run: npm run cdk deploy --all --require-approval never
+        run: yarn cdk deploy --all --require-approval never
