@@ -8,6 +8,11 @@ env:
   STACK_NAME: "CdkWorkshopStack"
 
 jobs:
+  echo:
+    use: docker://ubuntu:18.04
+    with:
+      args: ls -l .
+
   aws_cdk:
     runs-on: ubuntu-latest
     steps:
@@ -17,7 +22,6 @@ jobs:
           cdk_subcommand: "deploy"
           cdk_stack: ${{ env.STACK_NAME }}
           cdk_args: "--require-approval never"
-          working_dir: "../../cdk.json"
           actions_comment: false
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
