@@ -10,9 +10,11 @@ env:
 jobs:
   echo:
     runs-on: ubuntu-latest
-    use: docker://ubuntu:18.04
-    with:
-      args: ls -l .
+    steps:
+      - name: "echo"
+        uses: docker://ubuntu:18.04
+        with:
+          args: ls -l .
 
   aws_cdk:
     runs-on: ubuntu-latest
